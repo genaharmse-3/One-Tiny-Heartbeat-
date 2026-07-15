@@ -4,47 +4,60 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>One Tiny Heartbeat</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Patrick+Hand&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
 <body>
 
 <!-- SKY -->
-<div id="sky"></div>
 
-<!-- SUN -->
-<div id="sun"></div>
+<div id="sky">
 
-<!-- CLOUD LAYERS -->
+    <div id="sun"></div>
 
-<div id="clouds-back">
+    <!-- Back Clouds -->
 
-<div class="cloud cloud-a"></div>
-<div class="cloud cloud-b"></div>
+    <div id="cloud-layer-back">
 
-</div>
+        <div class="cloud c1"></div>
+        <div class="cloud c2"></div>
 
-<div id="clouds-middle">
+    </div>
 
-<div class="cloud cloud-c"></div>
-<div class="cloud cloud-d"></div>
+    <!-- Middle Clouds -->
 
-</div>
+    <div id="cloud-layer-middle">
 
-<div id="clouds-front">
+        <div class="cloud c3"></div>
+        <div class="cloud c4"></div>
 
-<div class="cloud cloud-e"></div>
-<div class="cloud cloud-f"></div>
+    </div>
+
+    <!-- Front Clouds -->
+
+    <div id="cloud-layer-front">
+
+        <div class="cloud c5"></div>
+        <div class="cloud c6"></div>
+
+    </div>
 
 </div>
 
@@ -52,31 +65,36 @@
 
 <section id="hero">
 
-<h1 id="main-title"></h1>
+    <h1 id="title"></h1>
 
-<p id="subtitle"></p>
+    <p id="subtitle"></p>
 
-<button id="begin-button">
+    <button id="begin">
 
-Begin Our Story
+        Begin Our Story
 
-</button>
+    </button>
 
 </section>
 
 <!-- HEARTBEAT -->
 
-<svg id="heartbeat" viewBox="0 0 1200 120">
+<svg id="heartbeat"
+viewBox="0 0 1200 120"
+preserveAspectRatio="none">
 
-<path id="heartbeat-path"
-d="M0 60
-L220 60
-L250 60
-L275 20
-L300 95
-L325 35
-L350 60
-L1200 60"/>
+<path
+id="heartbeat-path"
+d="
+M0 60
+L170 60
+L205 60
+L230 18
+L255 92
+L282 34
+L310 60
+L1200 60
+"/>
 
 </svg>
 
@@ -84,19 +102,25 @@ L1200 60"/>
 
 <audio id="music" loop>
 
-<source src="assets/music.mp3" type="audio/mpeg">
+<source
+src="assets/music.mp3"
+type="audio/mpeg">
 
 </audio>
 
-<audio id="heartbeat-sound">
+<audio id="beat">
 
-<source src="assets/heartbeat.mp3" type="audio/mpeg">
+<source
+src="assets/heartbeat.mp3"
+type="audio/mpeg">
 
 </audio>
 
 <audio id="whoosh">
 
-<source src="assets/whoosh.mp3" type="audio/mpeg">
+<source
+src="assets/whoosh.mp3"
+type="audio/mpeg">
 
 </audio>
 
