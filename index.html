@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>One Tiny Heartbeat</title>
+
+<meta name="theme-color" content="#A8D8FF">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<div id="experience">
+
+    <div id="camera">
+
+        <div id="sky">
+
+            <div id="sun-glow"></div>
+
+            <div id="light-rays"></div>
+
+            <div id="cloud-back"></div>
+
+            <div id="cloud-middle"></div>
+
+            <div id="cloud-front"></div>
+
+            <div id="particles"></div>
+
+            <div id="birds"></div>
+
+        </div>
+
+        <section id="opening">
+
+            <div id="heartbeat-container">
+
+                <svg
+                    id="heartbeat-svg"
+                    viewBox="0 0 1400 220"
+                    preserveAspectRatio="none">
+
+                    <path
+                        id="heartbeat-line"
+                        d="M0 110
+                           L210 110
+                           L260 110
+                           L300 60
+                           L340 170
+                           L395 20
+                           L455 190
+                           L520 110
+                           L1400 110"/>
+                </svg>
+
+                <div id="heartbeat-dot"></div>
+
+            </div>
+
+            <div id="story">
+
+                <h1 id="title"></h1>
+
+                <p id="story-text"></p>
+
+                <button id="begin-button">
+
+                    Begin Our Story
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+<audio id="music" loop>
+    <source src="assets/music/main.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="heartbeat-sound">
+    <source src="assets/sounds/heartbeat.mp3" type="audio/mpeg">
+</audio>
+
+<script src="js/app.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/clouds.js"></script>
+<script src="js/heartbeat.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/audio.js"></script>
+
+</body>
+
+</html>
