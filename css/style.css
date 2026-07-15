@@ -1,10 +1,7 @@
 /*==================================================
  ONE TINY HEARTBEAT
  STYLE.CSS
- Version 1
 ==================================================*/
-
-/* RESET */
 
 *{
     margin:0;
@@ -17,30 +14,18 @@ body{
 
     width:100%;
     height:100%;
-
     overflow:hidden;
 
-    font-family:"Poppins",sans-serif;
+    font-family:
+    "Trebuchet MS",
+    "Segoe UI",
+    sans-serif;
 
 }
 
-/*==================================================
- SKY
-==================================================*/
-
-body{
-
-    background:
-    linear-gradient(
-        to bottom,
-        #78B6F2 0%,
-        #9DCAF5 40%,
-        #D8EBFA 100%
-    );
-
-    position:relative;
-
-}
+/*==============================
+SKY
+==============================*/
 
 #sky{
 
@@ -48,97 +33,114 @@ body{
 
     inset:0;
 
-    overflow:hidden;
+    background:
+    linear-gradient(
+        to bottom,
+        #78B8F4 0%,
+        #A9D3FF 55%,
+        #EAF5FF 100%
+    );
 
 }
 
-/*==================================================
- SUN
-==================================================*/
+/*==============================
+SUN
+==============================*/
 
 #sun{
 
     position:absolute;
 
-    width:180px;
-    height:180px;
+    width:220px;
+
+    height:220px;
+
+    left:-70px;
+
+    top:-70px;
 
     border-radius:50%;
 
-    top:-50px;
-    left:-40px;
-
     background:white;
 
-    opacity:.95;
-
-    filter:blur(2px);
+    filter:blur(8px);
 
     box-shadow:
-        0 0 80px rgba(255,255,255,.9),
-        0 0 180px rgba(255,255,255,.7);
+    0 0 120px rgba(255,255,255,.95);
 
 }
 
-/*==================================================
- CLOUDS
-==================================================*/
+/*==============================
+CLOUDS
+==============================*/
 
-#clouds-back,
-#clouds-middle,
-#clouds-front{
+#cloud-layer-back,
+#cloud-layer-middle,
+#cloud-layer-front{
 
     position:absolute;
 
     inset:0;
 
-    background-repeat:repeat-x;
+}
 
-    opacity:.85;
+/* Back */
+
+#cloud-layer-back{
+
+    opacity:.20;
+
+    background-image:
+
+    radial-gradient(circle at 15% 30%, white 0 90px, transparent 92px),
+
+    radial-gradient(circle at 42% 18%, white 0 110px, transparent 112px),
+
+    radial-gradient(circle at 82% 25%, white 0 120px, transparent 122px);
 
 }
 
-#clouds-back{
+/* Middle */
 
-    background:
-    radial-gradient(circle at 15% 30%, rgba(255,255,255,.75) 0 55px, transparent 60px),
-    radial-gradient(circle at 55% 25%, rgba(255,255,255,.7) 0 70px, transparent 75px),
-    radial-gradient(circle at 85% 35%, rgba(255,255,255,.7) 0 65px, transparent 70px);
+#cloud-layer-middle{
 
-}
+    opacity:.35;
 
-#clouds-middle{
+    background-image:
 
-    opacity:.7;
+    radial-gradient(circle at 20% 72%, white 0 130px, transparent 132px),
 
-    background:
-    radial-gradient(circle at 30% 55%, rgba(255,255,255,.85) 0 80px, transparent 85px),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,.75) 0 95px, transparent 100px);
+    radial-gradient(circle at 68% 68%, white 0 160px, transparent 162px),
+
+    radial-gradient(circle at 92% 82%, white 0 120px, transparent 122px);
 
 }
 
-#clouds-front{
+/* Front */
+
+#cloud-layer-front{
 
     opacity:.95;
 
-    background:
-    radial-gradient(circle at 20% 80%, rgba(255,255,255,.95) 0 130px, transparent 140px),
-    radial-gradient(circle at 75% 88%, rgba(255,255,255,.9) 0 170px, transparent 180px);
+    background-image:
+
+    radial-gradient(circle at 12% 100%, white 0 220px, transparent 222px),
+
+    radial-gradient(circle at 55% 100%, white 0 210px, transparent 212px),
+
+    radial-gradient(circle at 92% 100%, white 0 240px, transparent 242px);
 
 }
 
-/*==================================================
- CONTENT
-==================================================*/
+/*==============================
+CONTENT
+==============================*/
 
 #content{
 
-    position:relative;
+    position:absolute;
 
-    z-index:10;
-
-    width:100%;
-    height:100%;
+    inset:0;
 
     display:flex;
 
@@ -150,86 +152,88 @@ body{
 
     text-align:center;
 
-    padding:30px;
+    padding:40px;
+
+    z-index:100;
 
 }
 
-/*==================================================
- TITLE
-==================================================*/
+/*==============================
+TITLE
+==============================*/
 
 #main-title{
 
-    font-family:"Patrick Hand",cursive;
-
-    font-size:clamp(3rem,8vw,5rem);
-
     color:white;
 
-    text-shadow:
-        0 3px 20px rgba(0,0,0,.18);
+    font-size:clamp(48px,8vw,90px);
 
-    min-height:90px;
+    font-weight:300;
+
+    text-shadow:
+
+    0 3px 12px rgba(0,0,0,.20);
+
+    min-height:100px;
 
 }
 
-/*==================================================
- SUBTITLE
-==================================================*/
+/*==============================
+SUBTITLE
+==============================*/
 
 #subtitle{
 
-    margin-top:20px;
-
-    font-size:1.15rem;
-
     color:white;
 
-    max-width:700px;
+    font-size:clamp(20px,3vw,30px);
+
+    max-width:720px;
+
+    margin-top:25px;
 
     line-height:1.8;
 
-    opacity:0;
+    text-shadow:
+
+    0 2px 10px rgba(0,0,0,.20);
+
+    min-height:80px;
 
 }
 
-/*==================================================
- BUTTON
-==================================================*/
+/*==============================
+BUTTON
+==============================*/
 
 #begin-button{
 
-    margin-top:55px;
+    margin-top:60px;
 
-    padding:18px 46px;
+    padding:18px 42px;
 
     border:none;
 
-    border-radius:50px;
+    border-radius:999px;
 
     background:white;
 
-    color:#4D86C5;
+    color:#6D8FB9;
 
-    font-size:1rem;
-
-    font-weight:600;
+    font-size:20px;
 
     cursor:pointer;
 
-    opacity:0;
-
-    transform:translateY(20px);
-
     box-shadow:
-        0 10px 35px rgba(0,0,0,.15);
 
-    transition:.35s;
+    0 20px 50px rgba(0,0,0,.12);
+
+    transition:.4s;
 
 }
 
 #begin-button:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
 }
