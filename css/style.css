@@ -1,6 +1,6 @@
 /*==================================================
- ONE TINY HEARTBEAT
- STYLE.CSS
+ONE TINY HEARTBEAT
+STYLE.CSS
 ==================================================*/
 
 *{
@@ -9,137 +9,210 @@
     box-sizing:border-box;
 }
 
-html,
-body{
-
+html,body{
     width:100%;
     height:100%;
     overflow:hidden;
-
-    font-family:
-    "Trebuchet MS",
-    "Segoe UI",
-    sans-serif;
-
+    font-family:"Trebuchet MS",sans-serif;
 }
 
-/*==============================
-SKY
-==============================*/
-
-#sky{
-
-    position:fixed;
-
-    inset:0;
+body{
 
     background:
     linear-gradient(
-        to bottom,
-        #78B8F4 0%,
-        #A9D3FF 55%,
-        #EAF5FF 100%
+        180deg,
+        #6fb8ff 0%,
+        #8ec8ff 40%,
+        #dbeeff 100%
     );
 
 }
 
-/*==============================
-SUN
-==============================*/
+/*========================
+SCENE
+========================*/
 
-#sun{
+#scene{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+
+}
+
+/*========================
+SUN
+========================*/
+
+.sun{
 
     position:absolute;
 
     width:220px;
-
     height:220px;
 
     left:-70px;
-
     top:-70px;
 
     border-radius:50%;
 
     background:white;
 
-    filter:blur(8px);
-
     box-shadow:
     0 0 120px rgba(255,255,255,.95);
 
 }
 
-/*==============================
-CLOUDS
-==============================*/
+/*========================
+BIG CLOUDS
+========================*/
 
-#cloud-layer-back,
-#cloud-layer-middle,
-#cloud-layer-front{
+.cloud{
 
     position:absolute;
 
-    inset:0;
+    background:white;
+
+    border-radius:100px;
+
+    filter:blur(1px);
+
+    opacity:.98;
 
 }
 
-/* Back */
+.cloud::before,
+.cloud::after{
 
-#cloud-layer-back{
+    content:"";
 
-    opacity:.20;
+    position:absolute;
 
-    background-image:
+    background:white;
 
-    radial-gradient(circle at 15% 30%, white 0 90px, transparent 92px),
-
-    radial-gradient(circle at 42% 18%, white 0 110px, transparent 112px),
-
-    radial-gradient(circle at 82% 25%, white 0 120px, transparent 122px);
+    border-radius:50%;
 
 }
 
-/* Middle */
+/* Cloud 1 */
 
-#cloud-layer-middle{
+.cloud1{
 
-    opacity:.35;
+    width:340px;
+    height:90px;
 
-    background-image:
-
-    radial-gradient(circle at 20% 72%, white 0 130px, transparent 132px),
-
-    radial-gradient(circle at 68% 68%, white 0 160px, transparent 162px),
-
-    radial-gradient(circle at 92% 82%, white 0 120px, transparent 122px);
+    bottom:80px;
+    left:-40px;
 
 }
 
-/* Front */
+.cloud1::before{
 
-#cloud-layer-front{
+    width:150px;
+    height:150px;
 
-    opacity:.95;
-
-    background-image:
-
-    radial-gradient(circle at 12% 100%, white 0 220px, transparent 222px),
-
-    radial-gradient(circle at 55% 100%, white 0 210px, transparent 212px),
-
-    radial-gradient(circle at 92% 100%, white 0 240px, transparent 242px);
+    left:20px;
+    top:-70px;
 
 }
 
-/*==============================
+.cloud1::after{
+
+    width:170px;
+    height:170px;
+
+    left:120px;
+    top:-80px;
+
+}
+
+/* Cloud 2 */
+
+.cloud2{
+
+    width:420px;
+    height:110px;
+
+    bottom:170px;
+    right:-100px;
+
+}
+
+.cloud2::before{
+
+    width:180px;
+    height:180px;
+
+    left:40px;
+    top:-85px;
+
+}
+
+.cloud2::after{
+
+    width:200px;
+    height:200px;
+
+    left:170px;
+    top:-95px;
+
+}
+
+/* Cloud 3 */
+
+.cloud3{
+
+    width:500px;
+    height:120px;
+
+    bottom:-20px;
+    right:-120px;
+
+}
+
+.cloud3::before{
+
+    width:220px;
+    height:220px;
+
+    left:60px;
+    top:-110px;
+
+}
+
+.cloud3::after{
+
+    width:220px;
+    height:220px;
+
+    left:220px;
+    top:-100px;
+
+}
+
+/*========================
+FLOATING CLOUDS
+========================*/
+
+.float{
+
+    animation:floatCloud 45s linear infinite;
+
+}
+
+.float2{
+
+    animation:floatCloud2 60s linear infinite;
+
+}
+
+/*========================
 CONTENT
-==============================*/
+========================*/
 
 #content{
 
     position:absolute;
-
     inset:0;
 
     display:flex;
@@ -154,86 +227,147 @@ CONTENT
 
     padding:40px;
 
-    z-index:100;
+    z-index:10;
 
 }
 
-/*==============================
+/*========================
 TITLE
-==============================*/
+========================*/
 
 #main-title{
 
     color:white;
 
-    font-size:clamp(48px,8vw,90px);
+    font-size:3rem;
 
     font-weight:300;
 
     text-shadow:
+    0 4px 18px rgba(0,0,0,.20);
 
-    0 3px 12px rgba(0,0,0,.20);
+    opacity:0;
 
-    min-height:100px;
+    transition:1.2s;
 
 }
 
-/*==============================
+/*========================
 SUBTITLE
-==============================*/
+========================*/
 
 #subtitle{
 
-    color:white;
-
-    font-size:clamp(20px,3vw,30px);
-
-    max-width:720px;
-
     margin-top:25px;
 
-    line-height:1.8;
+    color:white;
+
+    font-size:1.2rem;
+
+    max-width:650px;
+
+    line-height:1.7;
 
     text-shadow:
+    0 2px 12px rgba(0,0,0,.20);
 
-    0 2px 10px rgba(0,0,0,.20);
+    opacity:0;
 
-    min-height:80px;
+    transition:1.2s;
 
 }
 
-/*==============================
+/*========================
 BUTTON
-==============================*/
+========================*/
 
 #begin-button{
 
-    margin-top:60px;
+    margin-top:50px;
 
-    padding:18px 42px;
+    padding:20px 60px;
 
     border:none;
 
-    border-radius:999px;
+    border-radius:100px;
 
     background:white;
 
-    color:#6D8FB9;
+    color:#6b8ebc;
 
-    font-size:20px;
+    font-size:1.35rem;
 
     cursor:pointer;
 
     box-shadow:
+    0 15px 45px rgba(0,0,0,.15);
 
-    0 20px 50px rgba(0,0,0,.12);
+    opacity:0;
 
-    transition:.4s;
+    transition:1s;
 
 }
 
 #begin-button:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-5px);
+
+}
+
+/*========================
+VISIBLE STATES
+========================*/
+
+.title-visible{
+
+    opacity:1!important;
+
+}
+
+.subtitle-visible{
+
+    opacity:1!important;
+
+}
+
+.button-visible{
+
+    opacity:1!important;
+
+}
+
+/*========================
+ANIMATIONS
+========================*/
+
+@keyframes floatCloud{
+
+    from{
+
+        transform:translateX(-80px);
+
+    }
+
+    to{
+
+        transform:translateX(80px);
+
+    }
+
+}
+
+@keyframes floatCloud2{
+
+    from{
+
+        transform:translateX(70px);
+
+    }
+
+    to{
+
+        transform:translateX(-70px);
+
+    }
 
 }
