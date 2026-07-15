@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -25,57 +25,69 @@
 <!-- SUN -->
 <div id="sun"></div>
 
-<!-- MOVING CLOUDS -->
-<div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
-<div class="cloud cloud3"></div>
-<div class="cloud cloud4"></div>
-<div class="cloud cloud5"></div>
+<!-- CLOUD LAYERS -->
 
-<!-- FLOATING PARTICLES -->
-<div id="particles"></div>
+<div id="clouds-back">
 
-<!-- MAIN CONTENT -->
-<div id="hero">
-
-    <h1 id="main-title"></h1>
-
-    <p id="subtitle"></p>
-
-    <button id="begin-button">
-
-        Begin Our Story
-
-    </button>
+<div class="cloud cloud-a"></div>
+<div class="cloud cloud-b"></div>
 
 </div>
 
+<div id="clouds-middle">
+
+<div class="cloud cloud-c"></div>
+<div class="cloud cloud-d"></div>
+
+</div>
+
+<div id="clouds-front">
+
+<div class="cloud cloud-e"></div>
+<div class="cloud cloud-f"></div>
+
+</div>
+
+<!-- HERO -->
+
+<section id="hero">
+
+<h1 id="main-title"></h1>
+
+<p id="subtitle"></p>
+
+<button id="begin-button">
+
+Begin Our Story
+
+</button>
+
+</section>
+
 <!-- HEARTBEAT -->
+
 <svg id="heartbeat" viewBox="0 0 1200 120">
 
-<path
-id="heartbeat-path"
-d="
-M0 60
-L180 60
-L210 60
-L235 20
-L260 95
-L285 35
-L310 60
-L1200 60"
-/>
+<path id="heartbeat-path"
+d="M0 60
+L220 60
+L250 60
+L275 20
+L300 95
+L325 35
+L350 60
+L1200 60"/>
 
 </svg>
 
-<!-- MUSIC -->
+<!-- AUDIO -->
+
 <audio id="music" loop>
 
 <source src="assets/music.mp3" type="audio/mpeg">
 
 </audio>
 
-<!-- SOUNDS -->
 <audio id="heartbeat-sound">
 
 <source src="assets/heartbeat.mp3" type="audio/mpeg">
