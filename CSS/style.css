@@ -1,84 +1,79 @@
 /*==========================================================
- ONE TINY HEARTBEAT
- STYLE.CSS
- Version 2.0
+  ONE TINY HEARTBEAT
+  STYLE.CSS
+  Disney / Pixar Inspired Cinematic Theme
 ==========================================================*/
 
-/*==============================
-COLOURS
-==============================*/
-
-:root{
-
-    --sky-top:#A8D8FF;
-    --sky-middle:#CFEFFF;
-    --sky-bottom:#F3FBFF;
-
-    --sun:#FFF6D7;
-    --gold:#FFE7A3;
-
-    --white:#FFFFFF;
-
-    --text:#FFFFFF;
-
-    --shadow:rgba(0,0,0,.18);
-
-}
-
-/*==============================
+/*==========================================================
 RESET
-==============================*/
+==========================================================*/
 
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+    -webkit-tap-highlight-color:transparent;
 
 }
 
-html,
 body{
 
-    width:100%;
-    height:100%;
     overflow:hidden;
+    width:100%;
+    height:100vh;
 
     font-family:"Poppins",sans-serif;
 
+    background:#6EA9E8;
+
+    color:white;
+
 }
 
-/*==============================
-EXPERIENCE
-==============================*/
+/*==========================================================
+ROOT COLOURS
+==========================================================*/
 
-#experience{
+:root{
 
-    position:fixed;
+    --sky-top:#5D9FEA;
+    --sky-middle:#7EB6F0;
+    --sky-bottom:#CFE8FF;
 
-    inset:0;
+    --sun:#FFF2BE;
+
+    --white:#FFFFFF;
+
+    --glass:rgba(255,255,255,.16);
+
+    --shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+/*==========================================================
+APP
+==========================================================*/
+
+#app{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
 
     overflow:hidden;
 
 }
 
-/*==============================
-FLOATING CAMERA
-==============================*/
-
-#camera{
-
-    position:absolute;
-
-    inset:0;
-
-    animation:cameraFloat 22s ease-in-out infinite;
-
-}
-
-/*==============================
-SKY
-==============================*/
+/*==========================================================
+CINEMATIC SKY
+==========================================================*/
 
 #sky{
 
@@ -89,85 +84,152 @@ SKY
     overflow:hidden;
 
     background:
-    linear-gradient(
-
-        180deg,
-
-        var(--sky-top) 0%,
-
-        var(--sky-middle) 45%,
-
-        var(--sky-bottom) 100%
-
-    );
+        linear-gradient(
+            180deg,
+            var(--sky-top) 0%,
+            var(--sky-middle) 45%,
+            var(--sky-bottom) 100%
+        );
 
 }
-/*==============================
-SUNLIGHT
-==============================*/
 
-#sun-glow{
+/*==========================================================
+SUNLIGHT
+==========================================================*/
+
+#sun{
 
     position:absolute;
 
     width:900px;
+
     height:900px;
 
-    left:-220px;
-    top:-220px;
+    left:-250px;
+
+    top:-300px;
 
     border-radius:50%;
 
     background:
 
-    radial-gradient(
-
-        circle,
-
-        rgba(255,246,215,.95) 0%,
-
-        rgba(255,246,215,.45) 30%,
-
-        rgba(255,255,255,0) 70%
-
-    );
+        radial-gradient(
+            circle,
+            rgba(255,244,184,.95) 0%,
+            rgba(255,236,165,.55) 35%,
+            rgba(255,236,165,.15) 70%,
+            transparent 100%
+        );
 
     filter:blur(40px);
 
+    pointer-events:none;
+
 }
 
-/*==============================
+/*==========================================================
 LIGHT RAYS
-==============================*/
+==========================================================*/
 
-#light-rays{
+#sun::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-250px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.18),
+            transparent 70%
+        );
+
+}
+
+/*==========================================================
+CLOUD LAYERS
+==========================================================*/
+
+.cloud-layer{
 
     position:absolute;
 
     inset:0;
 
-    background:
+    overflow:hidden;
 
-    radial-gradient(
-
-        ellipse at top left,
-
-        rgba(255,255,255,.35),
-
-        transparent 65%
-
-    );
-
-    mix-blend-mode:screen;
+    pointer-events:none;
 
 }
-/*==============================
-CLOUDS
-==============================*/
 
-#cloud-back,
-#cloud-middle,
-#cloud-front{
+.cloud{
+
+    position:absolute;
+
+    background-size:contain;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    opacity:1;
+
+    filter:
+
+        drop-shadow(0 25px 40px rgba(0,0,0,.08));
+
+}
+/*==========================================================
+CLOUD POSITIONS
+==========================================================*/
+
+#cloud-back .cloud{
+
+    opacity:.40;
+
+}
+
+#cloud-middle .cloud{
+
+    opacity:.75;
+
+}
+
+#cloud-front .cloud{
+
+    opacity:1;
+
+}
+
+.cloud.small{
+
+    width:220px;
+    height:120px;
+
+}
+
+.cloud.medium{
+
+    width:380px;
+    height:200px;
+
+}
+
+.cloud.large{
+
+    width:620px;
+    height:320px;
+
+}
+
+/*==========================================================
+PARTICLES
+==========================================================*/
+
+#particles{
 
     position:absolute;
 
@@ -175,128 +237,167 @@ CLOUDS
 
     pointer-events:none;
 
-    background-repeat:repeat-x;
+}
 
-    background-position:center;
+.particle{
 
-    background-size:cover;
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.65;
+
+    box-shadow:
+
+        0 0 12px rgba(255,255,255,.9);
 
 }
 
-#cloud-back{
+/*==========================================================
+STARS
+==========================================================*/
 
-    opacity:.35;
-
-}
-
-#cloud-middle{
-
-    opacity:.60;
-
-}
-
-#cloud-front{
-
-    opacity:.90;
-
-}
-/*==============================
-OPENING
-==============================*/
-
-#opening{
+#stars{
 
     position:absolute;
 
     inset:0;
 
+    pointer-events:none;
+
+}
+
+/*==========================================================
+OPENING SCENE
+==========================================================*/
+
+#opening-scene{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+
+    height:100vh;
+
     display:flex;
-
-    justify-content:center;
-
-    align-items:center;
 
     flex-direction:column;
 
-    z-index:20;
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px;
 
 }
-#title{
+/*==========================================================
+HEARTBEAT
+==========================================================*/
+
+#heartbeat-wrapper{
+
+    width:min(900px,90vw);
+
+    margin-bottom:45px;
+
+}
+
+#heartbeat-svg{
+
+    width:100%;
+
+    height:140px;
+
+}
+
+#heartbeat-path{
+
+    fill:none;
+
+    stroke:#FFFFFF;
+
+    stroke-width:5;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    filter:
+
+        drop-shadow(0 0 18px rgba(255,255,255,.9))
+        drop-shadow(0 0 40px rgba(255,255,255,.7));
+
+}
+
+#heartbeat-dot{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:white;
+
+    position:absolute;
+
+    box-shadow:
+
+        0 0 25px white,
+        0 0 60px white;
+
+}
+
+/*==========================================================
+TITLE
+==========================================================*/
+
+#main-title{
 
     font-family:"Cormorant Garamond",serif;
 
     font-size:clamp(3rem,8vw,5.8rem);
 
-    font-weight:700;
+    font-weight:600;
 
     color:white;
 
+    letter-spacing:1px;
+
     text-shadow:
 
-        0 8px 30px rgba(0,0,0,.18);
+        0 5px 18px rgba(0,0,0,.18);
 
-    opacity:0;
+    margin-bottom:18px;
 
 }
-#story-text{
 
-    margin-top:35px;
-
-    font-size:1.4rem;
-
-    line-height:1.9;
-
-    color:white;
-
-    text-shadow:
-
-        0 5px 18px rgba(0,0,0,.25);
+#subtitle{
 
     max-width:700px;
 
-    margin-left:auto;
-    margin-right:auto;
+    font-size:1.2rem;
 
-    opacity:0;
+    line-height:1.8;
 
-}
-#begin-button{
+    font-weight:300;
 
-    margin-top:70px;
+    color:white;
 
-    padding:22px 48px;
+    text-shadow:
 
-    border:none;
+        0 3px 12px rgba(0,0,0,.15);
 
-    border-radius:999px;
-
-    background:white;
-
-    color:#5A87A9;
-
-    font-size:1rem;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    box-shadow:
-
-        0 20px 40px rgba(0,0,0,.15);
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:.45s;
-
-}
-
-#begin-button:hover{
-
-    transform:
-
-        translateY(-5px)
-        scale(1.04);
+    margin-bottom:55px;
 
 }
