@@ -1,82 +1,164 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*==================================================
+ ONE TINY HEARTBEAT
+ ANIMATIONS.CSS
+==================================================*/
 
-    const title = document.getElementById("main-title");
-    const subtitle = document.getElementById("subtitle");
-    const button = document.getElementById("begin-button");
+/*==========================
+SUN BREATHING
+==========================*/
 
-    button.style.display = "none";
+@keyframes sunGlow{
 
-    const text = "One Tiny Heartbeat";
+    0%,100%{
 
-    let i = 0;
+        transform:scale(1);
 
-    function typeTitle(){
+        filter:blur(2px);
 
-        if(i < text.length){
+    }
 
-            title.textContent += text.charAt(i);
+    50%{
 
-            i++;
+        transform:scale(1.06);
 
-            setTimeout(typeTitle,120);
+        filter:blur(4px);
+
+    }
+
+}
+
+#sun{
+
+    animation:sunGlow 9s ease-in-out infinite;
+
+}
+
+/*==========================
+BACK CLOUDS
+==========================*/
+
+@keyframes cloudBack{
+
+    from{
+
+        transform:translateX(-3%);
+
+    }
+
+    to{
+
+        transform:translateX(3%);
+
+    }
+
+}
+
+#clouds-back{
+
+    animation:cloudBack 60s ease-in-out infinite alternate;
+
+}
+
+/*==========================
+MIDDLE CLOUDS
+==========================*/
+
+@keyframes cloudMiddle{
+
+    from{
+
+        transform:translateX(-5%);
+
+    }
+
+    to{
+
+        transform:translateX(5%);
+
+    }
+
+}
+
+#clouds-middle{
+
+    animation:cloudMiddle 42s ease-in-out infinite alternate;
+
+}
+
+/*==========================
+FRONT CLOUDS
+==========================*/
+
+@keyframes cloudFront{
+
+    from{
+
+        transform:translateX(-8%);
+
+    }
+
+    to{
+
+        transform:translateX(8%);
+
+    }
+
+}
+
+#clouds-front{
+
+    animation:cloudFront 28s ease-in-out infinite alternate;
+
+}
+
+/*==========================
+TITLE
+==========================*/
+
+#main-title{
+
+    animation:titleFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes titleFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+/*==========================
+BUTTON
+==========================*/
+
+#begin-button{
+
+    animation:buttonFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes buttonFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
 
         }
-
-        else{
-
-            showSubtitle();
-
-        }
-
-    }
-
-    function showSubtitle(){
-
-        subtitle.textContent =
-        "Every beautiful story begins with a single heartbeat.";
-
-        subtitle.animate([
-
-            {opacity:0, transform:"translateY(15px)"},
-
-            {opacity:1, transform:"translateY(0)"}
-
-        ],{
-
-            duration:1200,
-
-            fill:"forwards",
-
-            easing:"ease"
-
-        });
-
-        setTimeout(showButton,900);
-
-    }
-
-    function showButton(){
-
-        button.style.display="inline-block";
-
-        button.animate([
-
-            {opacity:0, transform:"translateY(25px)"},
-
-            {opacity:1, transform:"translateY(0)"}
-
-        ],{
-
-            duration:1200,
-
-            fill:"forwards",
-
-            easing:"ease"
-
-        });
-
-    }
-
-    typeTitle();
-
-});
