@@ -1,7 +1,7 @@
-/*==================================================
+/*=========================================
 ONE TINY HEARTBEAT
 STYLE.CSS
-==================================================*/
+=========================================*/
 
 *{
     margin:0;
@@ -9,63 +9,76 @@ STYLE.CSS
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
+
     width:100%;
     height:100%;
     overflow:hidden;
-    font-family:"Trebuchet MS",sans-serif;
+    font-family:"Quicksand",sans-serif;
+
 }
 
 body{
 
-    background:
-    linear-gradient(
-        180deg,
-        #6fb8ff 0%,
-        #8ec8ff 40%,
-        #dbeeff 100%
+    background:linear-gradient(
+        to bottom,
+        #74b9ff 0%,
+        #93c9ff 45%,
+        #dff3ff 100%
     );
 
 }
 
-/*========================
-SCENE
-========================*/
+/*=========================================
+SKY
+=========================================*/
 
-#scene{
+#sky{
 
     position:fixed;
     inset:0;
-    overflow:hidden;
 
 }
 
-/*========================
+/*=========================================
 SUN
-========================*/
+=========================================*/
 
-.sun{
+#sun{
 
     position:absolute;
 
-    width:220px;
-    height:220px;
+    width:230px;
+    height:230px;
 
-    left:-70px;
     top:-70px;
+    left:-70px;
 
     border-radius:50%;
 
     background:white;
 
     box-shadow:
-    0 0 120px rgba(255,255,255,.95);
+        0 0 90px rgba(255,255,255,.95),
+        0 0 180px rgba(255,255,255,.55);
 
 }
 
-/*========================
-BIG CLOUDS
-========================*/
+/*=========================================
+CLOUD LAYERS
+=========================================*/
+
+#clouds-back,
+#clouds-middle,
+#clouds-front{
+
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+
+}
 
 .cloud{
 
@@ -73,11 +86,11 @@ BIG CLOUDS
 
     background:white;
 
-    border-radius:100px;
+    border-radius:200px;
+
+    opacity:.96;
 
     filter:blur(1px);
-
-    opacity:.98;
 
 }
 
@@ -94,198 +107,280 @@ BIG CLOUDS
 
 }
 
-/* Cloud 1 */
+/*=========================================
+BACK CLOUD
+=========================================*/
 
-.cloud1{
+.cloud-a{
 
-    width:340px;
+    width:320px;
     height:90px;
 
-    bottom:80px;
-    left:-40px;
+    top:120px;
+    left:-120px;
 
 }
 
-.cloud1::before{
+.cloud-a::before{
+
+    width:120px;
+    height:120px;
+
+    top:-45px;
+    left:40px;
+
+}
+
+.cloud-a::after{
 
     width:150px;
     height:150px;
 
-    left:20px;
-    top:-70px;
+    top:-65px;
+    left:130px;
 
 }
 
-.cloud1::after{
+/*=========================================
+BACK CLOUD
+=========================================*/
 
-    width:170px;
-    height:170px;
+.cloud-b{
 
-    left:120px;
-    top:-80px;
+    width:360px;
+    height:95px;
 
-}
-
-/* Cloud 2 */
-
-.cloud2{
-
-    width:420px;
-    height:110px;
-
-    bottom:170px;
+    top:210px;
     right:-100px;
 
 }
 
-.cloud2::before{
+.cloud-b::before{
+
+    width:150px;
+    height:150px;
+
+    top:-55px;
+    left:50px;
+
+}
+
+.cloud-b::after{
+
+    width:170px;
+    height:170px;
+
+    top:-70px;
+    left:150px;
+
+}
+
+/*=========================================
+MIDDLE CLOUD
+=========================================*/
+
+.cloud-c{
+
+    width:430px;
+    height:120px;
+
+    bottom:170px;
+    left:-80px;
+
+}
+
+.cloud-c::before{
 
     width:180px;
     height:180px;
 
+    top:-80px;
     left:40px;
-    top:-85px;
 
 }
 
-.cloud2::after{
+.cloud-c::after{
 
-    width:200px;
-    height:200px;
+    width:210px;
+    height:210px;
 
-    left:170px;
     top:-95px;
+    left:170px;
 
 }
 
-/* Cloud 3 */
+/*=========================================
+MIDDLE CLOUD
+=========================================*/
 
-.cloud3{
+.cloud-d{
 
-    width:500px;
+    width:460px;
     height:120px;
 
-    bottom:-20px;
-    right:-120px;
+    bottom:90px;
+    right:-100px;
 
 }
 
-.cloud3::before{
+.cloud-d::before{
+
+    width:180px;
+    height:180px;
+
+    top:-70px;
+    left:40px;
+
+}
+
+.cloud-d::after{
 
     width:220px;
     height:220px;
 
-    left:60px;
-    top:-110px;
-
-}
-
-.cloud3::after{
-
-    width:220px;
-    height:220px;
-
-    left:220px;
     top:-100px;
+    left:180px;
+
+}
+/*=========================================
+FRONT CLOUDS
+=========================================*/
+
+.cloud-e{
+
+    width:650px;
+    height:170px;
+
+    bottom:-40px;
+    left:-180px;
 
 }
 
-/*========================
-FLOATING CLOUDS
-========================*/
+.cloud-e::before{
 
-.float{
+    width:260px;
+    height:260px;
 
-    animation:floatCloud 45s linear infinite;
-
-}
-
-.float2{
-
-    animation:floatCloud2 60s linear infinite;
+    top:-120px;
+    left:70px;
 
 }
 
-/*========================
-CONTENT
-========================*/
+.cloud-e::after{
 
-#content{
+    width:300px;
+    height:300px;
+
+    top:-140px;
+    left:250px;
+
+}
+
+.cloud-f{
+
+    width:700px;
+    height:180px;
+
+    bottom:-60px;
+    right:-220px;
+
+}
+
+.cloud-f::before{
+
+    width:280px;
+    height:280px;
+
+    top:-130px;
+    left:60px;
+
+}
+
+.cloud-f::after{
+
+    width:320px;
+    height:320px;
+
+    top:-150px;
+    left:260px;
+
+}
+
+/*=========================================
+HERO
+=========================================*/
+
+#hero{
 
     position:absolute;
     inset:0;
 
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
 
     padding:40px;
 
-    z-index:10;
+    z-index:100;
 
 }
 
-/*========================
+/*=========================================
 TITLE
-========================*/
+=========================================*/
 
 #main-title{
 
+    font-size:clamp(2.7rem,7vw,5rem);
+
     color:white;
 
-    font-size:3rem;
+    font-weight:600;
 
-    font-weight:300;
+    letter-spacing:1px;
 
     text-shadow:
-    0 4px 18px rgba(0,0,0,.20);
+        0 5px 25px rgba(0,0,0,.20);
 
     opacity:0;
 
-    transition:1.2s;
-
 }
 
-/*========================
+/*=========================================
 SUBTITLE
-========================*/
+=========================================*/
 
 #subtitle{
 
     margin-top:25px;
 
+    max-width:700px;
+
     color:white;
 
-    font-size:1.2rem;
+    font-size:1.25rem;
 
-    max-width:650px;
-
-    line-height:1.7;
+    line-height:1.8;
 
     text-shadow:
-    0 2px 12px rgba(0,0,0,.20);
+        0 3px 12px rgba(0,0,0,.18);
 
     opacity:0;
 
-    transition:1.2s;
-
 }
 
-/*========================
+/*=========================================
 BUTTON
-========================*/
+=========================================*/
 
 #begin-button{
 
-    margin-top:50px;
+    margin-top:45px;
 
-    padding:20px 60px;
+    padding:18px 55px;
 
     border:none;
 
@@ -293,80 +388,185 @@ BUTTON
 
     background:white;
 
-    color:#6b8ebc;
+    color:#72a8db;
 
-    font-size:1.35rem;
+    font-size:1.15rem;
+
+    font-weight:600;
 
     cursor:pointer;
 
-    box-shadow:
-    0 15px 45px rgba(0,0,0,.15);
-
     opacity:0;
 
-    transition:1s;
+    transition:.35s;
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.18);
 
 }
 
 #begin-button:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-4px);
 
 }
 
-/*========================
+/*=========================================
+HEARTBEAT
+=========================================*/
+
+#heartbeat{
+
+    position:absolute;
+
+    left:0;
+    bottom:70px;
+
+    width:100%;
+
+    height:100px;
+
+    z-index:50;
+
+}
+
+#heartbeat-path{
+
+    fill:none;
+
+    stroke:white;
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    filter:drop-shadow(0 0 12px white);
+
+}
+
+/*=========================================
 VISIBLE STATES
-========================*/
+=========================================*/
 
 .title-visible{
 
-    opacity:1!important;
+    opacity:1;
+
+    transition:1.5s;
 
 }
 
 .subtitle-visible{
 
-    opacity:1!important;
+    opacity:1;
+
+    transition:1.5s;
 
 }
 
 .button-visible{
 
-    opacity:1!important;
+    opacity:1;
+
+    transition:1.5s;
 
 }
 
-/*========================
-ANIMATIONS
-========================*/
+/*=========================================
+CLOUD MOVEMENT
+=========================================*/
 
-@keyframes floatCloud{
+#clouds-back{
 
-    from{
+    animation:driftBack 90s ease-in-out infinite alternate;
 
-        transform:translateX(-80px);
+}
+
+#clouds-middle{
+
+    animation:driftMiddle 65s ease-in-out infinite alternate;
+
+}
+
+#clouds-front{
+
+    animation:driftFront 45s ease-in-out infinite alternate;
+
+}
+
+@keyframes driftBack{
+
+    from{transform:translateX(-40px);}
+    to{transform:translateX(40px);}
+
+}
+
+@keyframes driftMiddle{
+
+    from{transform:translateX(-60px);}
+    to{transform:translateX(60px);}
+
+}
+
+@keyframes driftFront{
+
+    from{transform:translateX(-80px);}
+    to{transform:translateX(80px);}
+
+}
+
+/*=========================================
+SUN GLOW
+=========================================*/
+
+@keyframes sunGlow{
+
+    0%,100%{
+
+        transform:scale(1);
 
     }
 
-    to{
+    50%{
 
-        transform:translateX(80px);
+        transform:scale(1.05);
 
     }
 
 }
 
-@keyframes floatCloud2{
+#sun{
 
-    from{
+    animation:sunGlow 10s ease-in-out infinite;
 
-        transform:translateX(70px);
+}
+
+/*=========================================
+MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+    #heartbeat{
+
+        bottom:40px;
+        height:70px;
 
     }
 
-    to{
+    #subtitle{
 
-        transform:translateX(-70px);
+        font-size:1rem;
+
+    }
+
+    #begin-button{
+
+        width:85%;
+
+        max-width:320px;
 
     }
 
