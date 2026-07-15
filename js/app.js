@@ -251,48 +251,111 @@ const App = {
 
     endVersionOne(){
 
-        this.title.animate([
-            {opacity:1},
-            {opacity:0}
-        ],{
-            duration:1000,
-            fill:"forwards"
-        });
+    this.title.animate([
+        {opacity:1},
+        {opacity:0}
+    ],{
+        duration:1200,
+        fill:"forwards"
+    });
 
-        this.subtitle.animate([
-            {opacity:1},
-            {opacity:0}
-        ],{
-            duration:1000,
-            fill:"forwards"
-        });
+    this.subtitle.animate([
+        {opacity:1},
+        {opacity:0}
+    ],{
+        duration:1200,
+        fill:"forwards"
+    });
 
-        setTimeout(()=>{
+    setTimeout(()=>{
 
-            this.title.textContent =
-            "Coming Next";
+        this.showPrediction();
 
-            this.subtitle.textContent =
-            "Prediction scene will be added in Version 2.";
+    },1400);
 
-            this.title.animate([
-                {opacity:0},
-                {opacity:1}
-            ],{
-                duration:1200,
-                fill:"forwards"
-            });
+},
+/*==================================================
+PREDICTION
+==================================================*/
 
-            this.subtitle.animate([
-                {opacity:0},
-                {opacity:1}
-            ],{
-                duration:1200,
-                fill:"forwards"
-            });
+showPrediction(){
 
-        },1000);
+    this.title.textContent =
+    "Before we share our little secret...";
+
+    this.subtitle.textContent =
+    "What does your heart believe? Choose the team you think our tiny miracle belongs to.";
+
+    this.title.animate([
+        {opacity:0, transform:"translateY(30px)"},
+        {opacity:1, transform:"translateY(0)"}
+    ],{
+        duration:1400,
+        fill:"forwards"
+    });
+
+    this.subtitle.animate([
+        {opacity:0, transform:"translateY(30px)"},
+        {opacity:1, transform:"translateY(0)"}
+    ],{
+        duration:1600,
+        fill:"forwards"
+    });
+
+    this.createPredictionButtons();
+
+},
+ createPredictionButtons(){
+
+    const wrapper = document.createElement("div");
+
+    wrapper.id = "prediction-buttons";
+
+    wrapper.innerHTML = `
+
+        <button id="team-boy-btn" class="team-btn">
+            💙 Team Boy
+        </button>
+
+        <button id="team-girl-btn" class="team-btn">
+            🩷 Team Girl
+        </button>
+
+    `;
+
+    document
+        .getElementById("title-section")
+        .appendChild(wrapper);
+
+    document
+        .getElementById("team-boy-btn")
+        .onclick = ()=>{
+
+            this.chooseTeam("boy");
+
+        };
+
+    document
+        .getElementById("team-girl-btn")
+        .onclick = ()=>{
+
+            this.chooseTeam("girl");
+
+        };
+
+},
+ chooseTeam(team){
+
+    this.prediction = team;
+
+    if(team==="boy"){
+
+        alert("Only Team Boy guests will now see the Helping Hand suggestion.");
+
+    }else{
+
+        alert("Only Team Girl guests will now see the Helping Hand suggestion.");
 
     }
 
-};
+ }
