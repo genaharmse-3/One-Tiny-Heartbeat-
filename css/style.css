@@ -1,0 +1,235 @@
+/*==================================================
+ ONE TINY HEARTBEAT
+ STYLE.CSS
+ Version 1
+==================================================*/
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+/*==================================================
+ SKY
+==================================================*/
+
+body{
+
+    background:
+    linear-gradient(
+        to bottom,
+        #78B6F2 0%,
+        #9DCAF5 40%,
+        #D8EBFA 100%
+    );
+
+    position:relative;
+
+}
+
+#sky{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+ SUN
+==================================================*/
+
+#sun{
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    top:-50px;
+    left:-40px;
+
+    background:white;
+
+    opacity:.95;
+
+    filter:blur(2px);
+
+    box-shadow:
+        0 0 80px rgba(255,255,255,.9),
+        0 0 180px rgba(255,255,255,.7);
+
+}
+
+/*==================================================
+ CLOUDS
+==================================================*/
+
+#clouds-back,
+#clouds-middle,
+#clouds-front{
+
+    position:absolute;
+
+    inset:0;
+
+    background-repeat:repeat-x;
+
+    opacity:.85;
+
+}
+
+#clouds-back{
+
+    background:
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.75) 0 55px, transparent 60px),
+    radial-gradient(circle at 55% 25%, rgba(255,255,255,.7) 0 70px, transparent 75px),
+    radial-gradient(circle at 85% 35%, rgba(255,255,255,.7) 0 65px, transparent 70px);
+
+}
+
+#clouds-middle{
+
+    opacity:.7;
+
+    background:
+    radial-gradient(circle at 30% 55%, rgba(255,255,255,.85) 0 80px, transparent 85px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.75) 0 95px, transparent 100px);
+
+}
+
+#clouds-front{
+
+    opacity:.95;
+
+    background:
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,.95) 0 130px, transparent 140px),
+    radial-gradient(circle at 75% 88%, rgba(255,255,255,.9) 0 170px, transparent 180px);
+
+}
+
+/*==================================================
+ CONTENT
+==================================================*/
+
+#content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+/*==================================================
+ TITLE
+==================================================*/
+
+#main-title{
+
+    font-family:"Patrick Hand",cursive;
+
+    font-size:clamp(3rem,8vw,5rem);
+
+    color:white;
+
+    text-shadow:
+        0 3px 20px rgba(0,0,0,.18);
+
+    min-height:90px;
+
+}
+
+/*==================================================
+ SUBTITLE
+==================================================*/
+
+#subtitle{
+
+    margin-top:20px;
+
+    font-size:1.15rem;
+
+    color:white;
+
+    max-width:700px;
+
+    line-height:1.8;
+
+    opacity:0;
+
+}
+
+/*==================================================
+ BUTTON
+==================================================*/
+
+#begin-button{
+
+    margin-top:55px;
+
+    padding:18px 46px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#4D86C5;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.15);
+
+    transition:.35s;
+
+}
+
+#begin-button:hover{
+
+    transform:translateY(-4px);
+
+}
