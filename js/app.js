@@ -1,103 +1,76 @@
 /*==================================================
  ONE TINY HEARTBEAT
  APP.JS
- Cinematic Experience
+ Version 1
 ==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
-
     App.init();
-
 });
 
 const App = {
 
-    /*==================================================
-    SETTINGS
-    ==================================================*/
+    title: null,
+    subtitle: null,
+    begin: null,
 
-    countdownDate: new Date("2026-08-15T15:00:00+02:00"),
+    storyIndex: 0,
+    storyTimer: null,
 
-    prediction:null,
-
-    storyIndex:0,
-
-    storyTimer:null,
-
-    /*==================================================
-    STORY
-    ==================================================*/
-
-    story:[
+    story: [
 
         {
-            title:"One Tiny Heartbeat",
-            text:"Every beautiful story begins with a single heartbeat."
+            title: "One Tiny Heartbeat",
+            text: "Every beautiful story begins with a single heartbeat."
         },
 
         {
-            title:"A Dream",
-            text:"Long before we knew your name, we imagined tiny footsteps, sleepy cuddles, and a love that would change our world forever."
+            title: "A Dream",
+            text: "Long before we knew your name, we imagined tiny footsteps, sleepy cuddles, and a love that would change our world forever."
         },
 
         {
-            title:"Hope",
-            text:"Day by day that dream quietly became our reality, and with every heartbeat our little miracle grew stronger."
+            title: "Hope",
+            text: "Day by day that dream quietly became our reality. Every heartbeat reminded us that our greatest adventure was already beginning."
         },
 
         {
-            title:"Love",
-            text:"Today we celebrate this unforgettable chapter surrounded by our loved ones, whose kindness and support have already become part of our baby's story."
+            title: "Love",
+            text: "Now we celebrate this beautiful chapter surrounded by our loved ones, whose kindness has already become part of our baby's story."
         },
 
         {
-            title:"One Tiny Heartbeat",
-            text:"Now...there is just one beautiful little secret left to share."
+            title: "One Tiny Heartbeat",
+            text: "And now... there is just one beautiful little secret left to share."
         }
 
     ],
 
-    /*==================================================
-    START
-    ==================================================*/
-
     init(){
 
-    this.cache();
+        this.cache();
+        this.bind();
+        this.showOpening();
 
-    this.bind();
-
-    this.showOpening();
-
-},
-
-    /*==================================================
-    CACHE
-    ==================================================*/
+    },
 
     cache(){
 
-    this.title=document.getElementById("main-title");
+        this.title = document.getElementById("main-title");
+        this.subtitle = document.getElementById("subtitle");
+        this.begin = document.getElementById("begin-button");
 
-    this.subtitle=document.getElementById("subtitle");
+    },
 
-    this.begin=document.getElementById("begin-button");
+    bind(){
 
-},
+        this.begin.addEventListener("click", () => {
 
-bind(){
+            this.startStory();
 
-    this.begin.addEventListener("click",()=>{
+        });
 
-        this.startStory();
-
-    });
-
-},
-
-    /*==================================================
-    OPENING
-    ==================================================*/
+    },
 
     showOpening(){
 
@@ -105,27 +78,23 @@ bind(){
 
     },
 
-    /*==================================================
-    TITLE TYPEWRITER
-    ==================================================*/
-
     typeTitle(){
 
-        const text="One Tiny Heartbeat";
+        const text = "One Tiny Heartbeat";
 
-        let i=0;
+        let i = 0;
 
-        this.title.textContent="";
+        this.title.textContent = "";
 
         this.title.classList.add("title-visible");
 
-        const typing=setInterval(()=>{
+        const typing = setInterval(()=>{
 
-            this.title.textContent+=text.charAt(i);
+            this.title.textContent += text.charAt(i);
 
             i++;
 
-            if(i>=text.length){
+            if(i >= text.length){
 
                 clearInterval(typing);
 
@@ -137,112 +106,193 @@ bind(){
 
     },
 
-    /*==================================================
-    SUBTITLE
-    ==================================================*/
-
     showSubtitle(){
 
-    this.subtitle.textContent =
-    "Every beautiful story begins with a single heartbeat.";
+        this.subtitle.textContent =
+        "Every beautiful story begins with a single heartbeat.";
 
-    this.subtitle.classList.add("subtitle-visible");
+        this.subtitle.classList.add("subtitle-visible");
 
-    setTimeout(()=>{
+        setTimeout(()=>{
 
-        this.begin.classList.add("button-visible");
+            this.begin.classList.add("button-visible");
 
-    },800);
+        },800);
 
-},
+    },
 
-/*==================================================
-BEGIN STORY
-==================================================*/
+    startStory(){
 
-startStory(){
+        this.begin.disabled = true;
 
-    this.begin.disabled = true;
+        this.begin.style.pointerEvents = "none";
 
-    this.begin.style.pointerEvents = "none";
+        this.begin.animate([
 
-    this.begin.animate([
-        {opacity:1, transform:"translateY(0)"},
-        {opacity:0, transform:"translateY(20px)"}
-    ],{
-        duration:800,
-        fill:"forwards",
-        easing:"ease"
-    });
+            {
+                opacity:1,
+                transform:"translateY(0)"
+            },
 
-    setTimeout(()=>{
+            {
+                opacity:0,
+                transform:"translateY(20px)"
+            }
 
-        this.showStorySlide(0);
+        ],{
 
-    },900);
+            duration:800,
+            fill:"forwards",
+            easing:"ease"
 
-},
+        });
 
-/*==================================================
-STORY SLIDES
-==================================================*/
+        setTimeout(()=>{
 
-showStorySlide(index){
+            this.showStorySlide(1);
 
-    if(index >= this.story.length){
+        },900);
 
-        alert("Next scene coming in Part 3 😊");
+    },
 
-        return;
+    showStorySlide(index){
 
-    }
+        if(index >= this.story.length){
 
-    this.storyIndex = index;
+            this.endVersionOne();
 
-    this.title.animate([
-        {opacity:1},
-        {opacity:0}
-    ],{
-        duration:600,
-        fill:"forwards"
-    });
+            return;
 
-    this.subtitle.animate([
-        {opacity:1},
-        {opacity:0}
-    ],{
-        duration:600,
-        fill:"forwards"
-    });
+        }
 
-    setTimeout(()=>{
-
-        this.title.textContent = this.story[index].title;
-
-        this.subtitle.textContent = this.story[index].text;
+        this.storyIndex = index;
 
         this.title.animate([
-            {opacity:0, transform:"translateY(20px)"},
-            {opacity:1, transform:"translateY(0)"}
+
+            {opacity:1},
+
+            {opacity:0}
+
         ],{
-            duration:1200,
+
+            duration:600,
+            fill:"forwards"
+
+        });
+
+        this.subtitle.animate([
+
+            {opacity:1},
+
+            {opacity:0}
+
+        ],{
+
+            duration:600,
+            fill:"forwards"
+
+        });
+
+        setTimeout(()=>{
+
+            this.title.textContent =
+            this.story[index].title;
+
+            this.subtitle.textContent =
+            this.story[index].text;
+
+            this.title.animate([
+
+                {
+                    opacity:0,
+                    transform:"translateY(20px)"
+                },
+
+                {
+                    opacity:1,
+                    transform:"translateY(0)"
+                }
+
+            ],{
+
+                duration:1200,
+                fill:"forwards"
+
+            });
+
+            this.subtitle.animate([
+
+                {
+                    opacity:0,
+                    transform:"translateY(20px)"
+                },
+
+                {
+                    opacity:1,
+                    transform:"translateY(0)"
+                }
+
+            ],{
+
+                duration:1200,
+                fill:"forwards"
+
+            });
+
+        },650);
+
+        this.storyTimer = setTimeout(()=>{
+
+            this.showStorySlide(index + 1);
+
+        },6500);
+
+    },
+
+    endVersionOne(){
+
+        this.title.animate([
+            {opacity:1},
+            {opacity:0}
+        ],{
+            duration:1000,
             fill:"forwards"
         });
 
         this.subtitle.animate([
-            {opacity:0, transform:"translateY(20px)"},
-            {opacity:1, transform:"translateY(0)"}
+            {opacity:1},
+            {opacity:0}
         ],{
-            duration:1200,
+            duration:1000,
             fill:"forwards"
         });
 
-    },650);
+        setTimeout(()=>{
 
-    this.storyTimer = setTimeout(()=>{
+            this.title.textContent =
+            "Coming Next";
 
-        this.showStorySlide(index + 1);
+            this.subtitle.textContent =
+            "Prediction scene will be added in Version 2.";
 
-    },6500);
+            this.title.animate([
+                {opacity:0},
+                {opacity:1}
+            ],{
+                duration:1200,
+                fill:"forwards"
+            });
 
-}
+            this.subtitle.animate([
+                {opacity:0},
+                {opacity:1}
+            ],{
+                duration:1200,
+                fill:"forwards"
+            });
+
+        },1000);
+
+    }
+
+};
