@@ -8,13 +8,11 @@
 
 <title>One Tiny Heartbeat</title>
 
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Main CSS -->
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -22,81 +20,51 @@
 <body>
 
 <!-- SKY -->
-<div id="sky"></div>
 
-<!-- SUN -->
-<div id="sun"></div>
+<div id="sky">
 
-<!-- CLOUD LAYER -->
-<div id="cloud-layer">
+    <div id="sun"></div>
 
-<div class="cloud c1"></div>
-<div class="cloud c2"></div>
-<div class="cloud c3"></div>
-<div class="cloud c4"></div>
-<div class="cloud c5"></div>
+    <div id="clouds"></div>
+
+    <div id="sparkles"></div>
 
 </div>
 
-<!-- SPARKLES -->
-<div id="sparkles"></div>
+<!-- HERO -->
 
-<!-- MAIN CONTENT -->
+<section id="hero">
 
-<div id="hero">
+    <h1 id="title"></h1>
 
-<h1 id="main-title"></h1>
+    <p id="subtitle"></p>
 
-<p id="subtitle"></p>
+    <button id="begin-btn">
 
-<button id="begin-button">
+        Begin Our Story
 
-Begin Our Story
+    </button>
 
-</button>
+</section>
 
-</div>
+<!-- HEARTBEAT -->
 
-<!-- HEARTBEAT SVG -->
-
-<svg id="heartbeat-svg" viewBox="0 0 1200 140">
+<svg id="heartbeat" viewBox="0 0 1200 120">
 
 <path
 id="heartbeat-path"
 d="
-M0 70
-L250 70
-L285 70
-L305 30
-L330 105
-L355 40
-L385 70
-L1200 70"
-/>
+M0 60
+L180 60
+L220 60
+L250 15
+L285 100
+L320 35
+L360 60
+L1200 60
+"/>
 
 </svg>
-
-<!-- MUSIC -->
-
-<audio id="music" loop>
-
-<source src="assets/music.mp3" type="audio/mpeg">
-
-</audio>
-
-<audio id="heartbeat-sound">
-
-<source src="assets/heartbeat.mp3" type="audio/mpeg">
-
-</audio>
-
-<audio id="whoosh">
-
-<source src="assets/whoosh.mp3" type="audio/mpeg">
-
-</audio>
-
-<!-- Javascript -->
 
 <script src="js/app.js"></script>
 
