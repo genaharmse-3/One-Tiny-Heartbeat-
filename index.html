@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -19,52 +19,195 @@
 
 <body>
 
-<!-- SKY -->
+<!-- BACKGROUND -->
 
-<div id="sky">
+<div id="background">
 
     <div id="sun"></div>
 
-    <div id="clouds"></div>
-
     <div id="sparkles"></div>
+
+    <div id="clouds-back"></div>
+
+    <div id="clouds-middle"></div>
+
+    <div id="clouds-front"></div>
 
 </div>
 
+<!-- HEARTBEAT -->
+
+<svg id="heartbeat" viewBox="0 0 1200 120" preserveAspectRatio="none">
+
+<path id="heartbeat-path"
+d="M0 60
+L170 60
+L205 60
+L230 18
+L255 95
+L280 35
+L310 60
+L1200 60"/>
+
+</svg>
+
 <!-- HERO -->
 
-<section id="hero">
+<main id="hero">
 
-    <h1 id="title"></h1>
+<div id="story-container">
 
-    <p id="subtitle"></p>
+<h1 id="story-title"></h1>
 
-    <button id="begin-btn">
+<p id="story-text"></p>
 
-        Begin Our Story
+<button id="story-button">
 
-    </button>
+Begin Our Story
+
+</button>
+
+</div>
+
+</main>
+
+<!-- TEAM SELECTION -->
+
+<section id="team-selection" class="hidden">
+
+<h2>What do you think?</h2>
+
+<p>Choose your prediction before the big reveal.</p>
+
+<div class="team-buttons">
+
+<button id="boy-btn">
+
+💙 Team Boy
+
+</button>
+
+<button id="girl-btn">
+
+💛 Team Girl
+
+</button>
+
+</div>
 
 </section>
 
-<!-- HEARTBEAT -->
+<!-- BOY GIFTS -->
 
-<svg id="heartbeat" viewBox="0 0 1200 120">
+<section id="boy-gifts" class="hidden">
 
-<path
-id="heartbeat-path"
-d="
-M0 60
-L180 60
-L220 60
-L250 15
-L285 100
-L320 35
-L360 60
-L1200 60
-"/>
+<h2>Thank you 💙</h2>
 
-</svg>
+<p>
+
+If you'd like to be part of our little one's journey in an extra special way, we'd be so grateful.
+
+</p>
+
+<ul>
+
+<li>Diapers</li>
+<li>Baby wipes</li>
+<li>Blue outfit</li>
+<li>Socks</li>
+<li>Baby blanket</li>
+
+</ul>
+
+</section>
+
+<!-- GIRL GIFTS -->
+
+<section id="girl-gifts" class="hidden">
+
+<h2>Thank you 💛</h2>
+
+<p>
+
+If you'd like to be part of our little one's journey in an extra special way, we'd be so grateful.
+
+</p>
+
+<ul>
+
+<li>Diapers</li>
+<li>Baby wipes</li>
+<li>Pink outfit</li>
+<li>Socks</li>
+<li>Baby blanket</li>
+
+</ul>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section id="countdown" class="hidden">
+
+<h2>Counting Down...</h2>
+
+<div id="timer">
+
+<div>
+
+<span id="days">00</span>
+
+<small>Days</small>
+
+</div>
+
+<div>
+
+<span id="hours">00</span>
+
+<small>Hours</small>
+
+</div>
+
+<div>
+
+<span id="minutes">00</span>
+
+<small>Minutes</small>
+
+</div>
+
+<div>
+
+<span id="seconds">00</span>
+
+<small>Seconds</small>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+
+<source src="assets/music.mp3" type="audio/mpeg">
+
+</audio>
+
+<audio id="heartbeat-audio">
+
+<source src="assets/heartbeat.mp3" type="audio/mpeg">
+
+</audio>
+
+<audio id="whoosh">
+
+<source src="assets/whoosh.mp3" type="audio/mpeg">
+
+</audio>
 
 <script src="js/app.js"></script>
 
