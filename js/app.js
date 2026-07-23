@@ -586,3 +586,137 @@ showGiftSection(){
         String(seconds).padStart(2,"0");
 
     },
+    /*==================================================
+    REVEAL
+    ==================================================*/
+
+    showReveal(){
+
+        this.wishSection.classList.add("hidden");
+
+        this.countdownSection.classList.add("hidden");
+
+        this.revealSection.classList.remove("hidden");
+
+        this.revealSection.classList.add("fadeIn");
+
+        const revealSound=document.getElementById("revealSound");
+
+        revealSound.currentTime=0;
+
+        revealSound.play().catch(()=>{});
+
+        this.playHeartbeat();
+
+        document.getElementById("revealTitle").textContent="It's A...";
+
+        setTimeout(()=>{
+
+            /* CHANGE THIS WHEN YOU KNOW THE GENDER */
+
+            const result=document.getElementById("revealResult");
+
+            result.innerHTML="💙 BOY 💙";
+
+            // Example for a girl:
+            // result.innerHTML="💛 GIRL 💛";
+
+            this.launchConfetti();
+
+            setTimeout(()=>{
+
+                this.showEnding();
+
+            },8000);
+
+        },4000);
+
+    },
+
+    /*==================================================
+    CONFETTI
+    ==================================================*/
+
+    launchConfetti(){
+
+        const container=document.getElementById("confettiContainer");
+
+        const colors=[
+
+            "#4FA8FF",
+            "#FFD84D",
+            "#FF8FC8",
+            "#FFFFFF"
+
+        ];
+
+        for(let i=0;i<180;i++){
+
+            const piece=document.createElement("div");
+
+            piece.className="confetti";
+
+            piece.style.position="fixed";
+
+            piece.style.left=Math.random()*100+"vw";
+
+            piece.style.top="-20px";
+
+            piece.style.width="10px";
+
+            piece.style.height="16px";
+
+            piece.style.background=
+                colors[Math.floor(Math.random()*colors.length)];
+
+            piece.style.opacity="1";
+
+            piece.style.transform=
+                "rotate("+Math.random()*360+"deg)";
+
+            piece.style.transition="transform 5s linear";
+
+            container.appendChild(piece);
+
+            requestAnimationFrame(()=>{
+
+                piece.style.transform=
+                    "translateY(110vh) rotate(720deg)";
+
+            });
+
+            setTimeout(()=>{
+
+                piece.remove();
+
+            },5500);
+
+        }
+
+    },
+
+    /*==================================================
+    ENDING
+    ==================================================*/
+
+    showEnding(){
+
+        this.revealSection.classList.add("hidden");
+
+        this.endingSection.classList.remove("hidden");
+
+        this.endingSection.classList.add("fadeIn");
+
+    }
+
+};
+
+/*==================================================
+START APP
+==================================================*/
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    App.init();
+
+});
