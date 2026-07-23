@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>One Tiny Heartbeat</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
 <body>
 
-<!-- SKY -->
+<!-- ==========================================
+BACKGROUND
+========================================== -->
+
 <div id="sky">
 
     <div id="sun"></div>
 
-    <div id="cloud-layer-1"></div>
+    <div id="clouds-back"></div>
 
-    <div id="cloud-layer-2"></div>
+    <div id="clouds-middle"></div>
 
-    <div id="cloud-layer-3"></div>
+    <div id="clouds-front"></div>
 
     <div id="sparkles"></div>
 
+    <div id="birds"></div>
+
 </div>
 
-<!-- HERO -->
+<!-- ==========================================
+OPENING
+========================================== -->
 
-<section id="hero">
+<section id="opening">
 
-    <div id="hero-content">
+    <div class="opening-content">
 
-        <h1 id="title"></h1>
+        <h1 id="openingTitle"></h1>
 
-        <p id="subtitle"></p>
+        <p id="openingSubtitle"></p>
 
-        <button id="beginBtn">
+        <button id="beginButton">
 
             Step Into Our Story
 
@@ -52,11 +69,14 @@
 
 </section>
 
-<!-- STORY -->
+<!-- ==========================================
+STORY
+========================================== -->
 
-<section id="story" class="hidden">
+<section id="storySection"
+class="hidden">
 
-    <div class="story-box">
+    <div class="story-card">
 
         <h2 id="storyTitle"></h2>
 
@@ -66,23 +86,34 @@
 
 </section>
 
-<!-- TEAM -->
+<!-- ==========================================
+TEAM PREDICTION
+========================================== -->
 
-<section id="team" class="hidden">
+<section id="predictionSection"
+class="hidden">
 
-<h2>Choose Your Prediction</h2>
+<h2>
 
-<p>Which team are you joining?</p>
+Make Your Prediction
 
-<div class="teams">
+</h2>
 
-<button id="boyBtn">
+<p>
+
+Do you think our little miracle is a...
+
+</p>
+
+<div class="prediction-buttons">
+
+<button id="teamBoy">
 
 💙 Team Boy
 
 </button>
 
-<button id="girlBtn">
+<button id="teamGirl">
 
 💛 Team Girl
 
@@ -92,171 +123,272 @@
 
 </section>
 
-<!-- GIFTS -->
+<!-- ==========================================
+GIFTS
+========================================== -->
 
-<section id="giftSection" class="hidden">
+<section id="giftSection"
+class="hidden">
 
-<h2 id="giftTitle"></h2>
-
-<p id="giftMessage"></p>
-
-<ul id="giftList"></ul>
-
-</section>
-
-<!-- WISHES -->
-
-<section id="wishSection" class="hidden">
-
-<h2>Leave a Wish For Our Little One ☁️</h2>
-
-<p>
-
-Whether you're near or far, your love means the world to us.
-
-Leave a little wish that will float through our baby's sky.
-
-</p>
-
-<input
-id="guestName"
-type="text"
-placeholder="Your Name">
-
-<textarea
-id="guestWish"
-placeholder="Write your wish here..."></textarea>
-
-<button id="sendWish">
-
-Send Wish ☁️
-
-</button>
-
-<div id="floatingSky"></div>
-
-</section>
-
-<!-- COUNTDOWN -->
-
-<section id="countdownSection" class="hidden">
-
-<h2>The Big Reveal Begins In</h2>
-
-<div id="countdown">
-
-<div>
-
-<span id="days">00</span>
-
-<label>Days</label>
-
-</div>
-
-<div>
-
-<span id="hours">00</span>
-
-<label>Hours</label>
-
-</div>
-
-<div>
-
-<span id="minutes">00</span>
-
-<label>Minutes</label>
-
-</div>
-
-<div>
-
-<span id="seconds">00</span>
-
-<label>Seconds</label>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- REVEAL -->
-
-<section id="revealSection" class="hidden">
-
-<h1 id="revealTitle">
-
-It's A...
-
-</h1>
-
-<div id="revealResult"></div>
-
-</section>
-
-<!-- ENDING -->
-
-<section id="ending" class="hidden">
-
-<h2>
-
-Thank You ❤️
+<h2 id="giftHeading">
 
 </h2>
 
-<p>
-
-Whether you celebrated beside us or from afar,
-
-thank you for being part of our little one's story.
-
-One day our baby will know just how loved they were
-
-before they were even born.
+<p id="giftMessage">
 
 </p>
 
+<ul id="giftIdeas">
+
+</ul>
+
+</section>
+<!-- ==========================================
+WISH UPON A CLOUD
+========================================== -->
+
+<section id="wishSection"
+class="hidden">
+
+    <div class="wish-container">
+
+        <h2>
+
+            Wish Upon A Cloud ☁️
+
+        </h2>
+
+        <p>
+
+            Whether you're near or far, we'd love for you to leave a little wish for our baby.
+            Every wish becomes a cloud floating across our baby's sky.
+
+        </p>
+
+        <input
+            type="text"
+            id="guestName"
+            placeholder="Your Name">
+
+        <textarea
+            id="guestWish"
+            placeholder="Write your wish here..."></textarea>
+
+        <button id="sendWish">
+
+            Send My Wish
+
+        </button>
+
+    </div>
+
+    <div id="wishSky"></div>
+
 </section>
 
-<!-- HEARTBEAT -->
+<!-- ==========================================
+COUNTDOWN
+========================================== -->
 
-<svg id="heartbeat" viewBox="0 0 1200 120">
+<section id="countdownSection"
+class="hidden">
+
+    <h2>
+
+        The Big Reveal Begins In...
+
+    </h2>
+
+    <div id="countdown">
+
+        <div class="time-box">
+
+            <span id="days">00</span>
+
+            <label>Days</label>
+
+        </div>
+
+        <div class="time-box">
+
+            <span id="hours">00</span>
+
+            <label>Hours</label>
+
+        </div>
+
+        <div class="time-box">
+
+            <span id="minutes">00</span>
+
+            <label>Minutes</label>
+
+        </div>
+
+        <div class="time-box">
+
+            <span id="seconds">00</span>
+
+            <label>Seconds</label>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+BIG REVEAL
+========================================== -->
+
+<section id="revealSection"
+class="hidden">
+
+    <h1 id="revealTitle">
+
+        It's A...
+
+    </h1>
+
+    <div id="revealResult">
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+THANK YOU
+========================================== -->
+
+<section id="endingSection"
+class="hidden">
+
+    <div class="ending-content">
+
+        <h2>
+
+            Thank You ❤️
+
+        </h2>
+
+        <p>
+
+            Whether you celebrated beside us or from across the world,
+            thank you for being part of our little one's story.
+
+        </p>
+
+        <p>
+
+            One day our baby will know just how loved they were
+            before they were even born.
+
+        </p>
+
+    </div>
+
+</section>
+<!-- ==========================================
+HEARTBEAT LINE
+========================================== -->
+
+<svg
+id="heartbeat"
+viewBox="0 0 1200 120"
+preserveAspectRatio="none">
 
 <path
 
 id="heartbeatPath"
 
-d="M0 60
-L170 60
+d="
+M0 60
+L180 60
 L205 60
-L235 18
-L260 100
-L290 35
-L320 60
-L1200 60"/>
+L225 20
+L245 95
+L265 35
+L285 60
+L1200 60
+"/>
 
 </svg>
 
-<!-- AUDIO -->
+<!-- ==========================================
+CONFETTI
+(JavaScript creates pieces here)
+========================================== -->
 
-<audio id="music" loop>
+<div id="confettiContainer"></div>
 
-<source src="assets/music.mp3" type="audio/mpeg">
+<!-- ==========================================
+AUDIO
+========================================== -->
+
+<audio
+id="backgroundMusic"
+loop
+preload="auto">
+
+<source
+src="assets/music.mp3"
+type="audio/mpeg">
 
 </audio>
 
-<audio id="heartbeatSound">
+<audio
+id="heartbeatSound"
+preload="auto">
 
-<source src="assets/heartbeat.mp3" type="audio/mpeg">
+<source
+src="assets/heartbeat.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio
+id="whooshSound"
+preload="auto">
+
+<source
+src="assets/whoosh.mp3"
+type="audio/mpeg">
 
 </audio>
 
-<audio id="whoosh">
+<audio
+id="revealSound"
+preload="auto">
 
-<source src="assets/whoosh.mp3" type="audio/mpeg">
+<source
+src="assets/reveal.mp3"
+type="audio/mpeg">
 
 </audio>
+
+<!-- ==========================================
+LOADING SCREEN
+========================================== -->
+
+<div id="loader">
+
+    <div class="loader-heart">
+
+        ❤️
+
+    </div>
+
+    <p>
+
+        Preparing something beautiful...
+
+    </p>
+
+</div>
+
+<!-- ==========================================
+JAVASCRIPT
+========================================== -->
 
 <script src="js/app.js"></script>
 
