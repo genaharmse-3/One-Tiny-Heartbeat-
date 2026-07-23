@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -19,75 +17,72 @@
 
 <body>
 
-<!-- BACKGROUND -->
-
-<div id="background">
+<!-- SKY -->
+<div id="sky">
 
     <div id="sun"></div>
 
+    <div id="cloud-layer-1"></div>
+
+    <div id="cloud-layer-2"></div>
+
+    <div id="cloud-layer-3"></div>
+
     <div id="sparkles"></div>
 
-    <div id="clouds-back"></div>
-
-    <div id="clouds-middle"></div>
-
-    <div id="clouds-front"></div>
-
 </div>
-
-<!-- HEARTBEAT -->
-
-<svg id="heartbeat" viewBox="0 0 1200 120" preserveAspectRatio="none">
-
-<path id="heartbeat-path"
-d="M0 60
-L170 60
-L205 60
-L230 18
-L255 95
-L280 35
-L310 60
-L1200 60"/>
-
-</svg>
 
 <!-- HERO -->
 
-<main id="hero">
+<section id="hero">
 
-<div id="story-container">
+    <div id="hero-content">
 
-<h1 id="story-title"></h1>
+        <h1 id="title"></h1>
 
-<p id="story-text"></p>
+        <p id="subtitle"></p>
 
-<button id="story-button">
+        <button id="beginBtn">
 
-Begin Our Story
+            Step Into Our Story
 
-</button>
+        </button>
 
-</div>
+    </div>
 
-</main>
+</section>
 
-<!-- TEAM SELECTION -->
+<!-- STORY -->
 
-<section id="team-selection" class="hidden">
+<section id="story" class="hidden">
 
-<h2>What do you think?</h2>
+    <div class="story-box">
 
-<p>Choose your prediction before the big reveal.</p>
+        <h2 id="storyTitle"></h2>
 
-<div class="team-buttons">
+        <p id="storyText"></p>
 
-<button id="boy-btn">
+    </div>
+
+</section>
+
+<!-- TEAM -->
+
+<section id="team" class="hidden">
+
+<h2>Choose Your Prediction</h2>
+
+<p>Which team are you joining?</p>
+
+<div class="teams">
+
+<button id="boyBtn">
 
 💙 Team Boy
 
 </button>
 
-<button id="girl-btn">
+<button id="girlBtn">
 
 💛 Team Girl
 
@@ -97,67 +92,64 @@ Begin Our Story
 
 </section>
 
-<!-- BOY GIFTS -->
+<!-- GIFTS -->
 
-<section id="boy-gifts" class="hidden">
+<section id="giftSection" class="hidden">
 
-<h2>Thank you 💙</h2>
+<h2 id="giftTitle"></h2>
 
-<p>
+<p id="giftMessage"></p>
 
-If you'd like to be part of our little one's journey in an extra special way, we'd be so grateful.
-
-</p>
-
-<ul>
-
-<li>Diapers</li>
-<li>Baby wipes</li>
-<li>Blue outfit</li>
-<li>Socks</li>
-<li>Baby blanket</li>
-
-</ul>
+<ul id="giftList"></ul>
 
 </section>
 
-<!-- GIRL GIFTS -->
+<!-- WISHES -->
 
-<section id="girl-gifts" class="hidden">
+<section id="wishSection" class="hidden">
 
-<h2>Thank you 💛</h2>
+<h2>Leave a Wish For Our Little One ☁️</h2>
 
 <p>
 
-If you'd like to be part of our little one's journey in an extra special way, we'd be so grateful.
+Whether you're near or far, your love means the world to us.
+
+Leave a little wish that will float through our baby's sky.
 
 </p>
 
-<ul>
+<input
+id="guestName"
+type="text"
+placeholder="Your Name">
 
-<li>Diapers</li>
-<li>Baby wipes</li>
-<li>Pink outfit</li>
-<li>Socks</li>
-<li>Baby blanket</li>
+<textarea
+id="guestWish"
+placeholder="Write your wish here..."></textarea>
 
-</ul>
+<button id="sendWish">
+
+Send Wish ☁️
+
+</button>
+
+<div id="floatingSky"></div>
 
 </section>
 
 <!-- COUNTDOWN -->
 
-<section id="countdown" class="hidden">
+<section id="countdownSection" class="hidden">
 
-<h2>Counting Down...</h2>
+<h2>The Big Reveal Begins In</h2>
 
-<div id="timer">
+<div id="countdown">
 
 <div>
 
 <span id="days">00</span>
 
-<small>Days</small>
+<label>Days</label>
 
 </div>
 
@@ -165,7 +157,7 @@ If you'd like to be part of our little one's journey in an extra special way, we
 
 <span id="hours">00</span>
 
-<small>Hours</small>
+<label>Hours</label>
 
 </div>
 
@@ -173,7 +165,7 @@ If you'd like to be part of our little one's journey in an extra special way, we
 
 <span id="minutes">00</span>
 
-<small>Minutes</small>
+<label>Minutes</label>
 
 </div>
 
@@ -181,7 +173,7 @@ If you'd like to be part of our little one's journey in an extra special way, we
 
 <span id="seconds">00</span>
 
-<small>Seconds</small>
+<label>Seconds</label>
 
 </div>
 
@@ -189,7 +181,64 @@ If you'd like to be part of our little one's journey in an extra special way, we
 
 </section>
 
-<!-- MUSIC -->
+<!-- REVEAL -->
+
+<section id="revealSection" class="hidden">
+
+<h1 id="revealTitle">
+
+It's A...
+
+</h1>
+
+<div id="revealResult"></div>
+
+</section>
+
+<!-- ENDING -->
+
+<section id="ending" class="hidden">
+
+<h2>
+
+Thank You ❤️
+
+</h2>
+
+<p>
+
+Whether you celebrated beside us or from afar,
+
+thank you for being part of our little one's story.
+
+One day our baby will know just how loved they were
+
+before they were even born.
+
+</p>
+
+</section>
+
+<!-- HEARTBEAT -->
+
+<svg id="heartbeat" viewBox="0 0 1200 120">
+
+<path
+
+id="heartbeatPath"
+
+d="M0 60
+L170 60
+L205 60
+L235 18
+L260 100
+L290 35
+L320 60
+L1200 60"/>
+
+</svg>
+
+<!-- AUDIO -->
 
 <audio id="music" loop>
 
@@ -197,7 +246,7 @@ If you'd like to be part of our little one's journey in an extra special way, we
 
 </audio>
 
-<audio id="heartbeat-audio">
+<audio id="heartbeatSound">
 
 <source src="assets/heartbeat.mp3" type="audio/mpeg">
 
